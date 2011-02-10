@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="bootstrap.php">
+<phpunit 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://github.com/gooh/phpunit-schema/raw/master/src/phpunit.xsd"
+    bootstrap="bootstrap.php">
 	<testsuites>
 	  <testsuite name="PHPUnit-Schema">
 	    <directory suffix="Test.php">Tests/</directory>
