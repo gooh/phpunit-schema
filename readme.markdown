@@ -38,14 +38,16 @@ following two lines are all that is required:
         xsi:noNamespaceSchemaLocation="location of xsd file"
         …
 
-### Resources
+## Additional Resources
 
 The documentation of configuration files can be found in the official PHPUnit 
 Manual 
 
-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html
+- [http://www.phpunit.de/manual/current/en/appendixes.configuration.html][1]
 
 The class processing the configuration file is
 
-- https://github.com/sebastianbergmann/phpunit/raw/master/PHPUnit/Util/Configuration.php
+- [https://github.com/sebastianbergmann/phpunit/raw/master/PHPUnit/Util/Configuration.php][2]
 
+[1]: http://www.phpunit.de/manual/current/en/appendixes.configuration.html
+[2]: https://github.com/sebastianbergmann/phpunit/raw/master/PHPUnit/Util/Configuration.php
