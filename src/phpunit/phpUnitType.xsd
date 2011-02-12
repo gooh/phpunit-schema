@@ -19,27 +19,27 @@
     </xs:complexType>
         
     <xs:attributeGroup name="configAttributeGroup">
-        <xs:attribute name="backupGlobals" type="xs:boolean" default="true" use="optional" />
-        <xs:attribute name="backupStaticAttributes" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="bootstrap" type="xs:anyURI" use="optional" />
-        <xs:attribute name="cacheTokens" type="xs:boolean" use="optional" />
-        <xs:attribute name="colors" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="convertErrorsToExceptions" type="xs:boolean" default="true" use="optional" />
-        <xs:attribute name="convertNoticesToExceptions" type="xs:boolean" default="true" use="optional" />
-        <xs:attribute name="convertWarningsToExceptions" type="xs:boolean" default="true" use="optional" />
-        <xs:attribute name="forceCoversAnnotation" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="mapTestClassNameToCoveredClassName" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="printerClass" type="xs:string" default="PHPUnit_TextUI_ResultPrinter" use="optional" />
-        <xs:attribute name="processIsolation" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="stopOnError" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="stopOnFailure" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="stopOnIncomplete" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="stopOnSkipped" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="strict" type="xs:boolean" default="false" use="optional" />        
-        <xs:attribute name="syntaxCheck" type="xs:boolean" default="false" use="optional" />
-        <xs:attribute name="testSuiteLoaderClass" type="xs:string" default="PHPUnit_Runner_StandardTestSuiteLoader" use="optional" />
-        <xs:attribute name="testSuiteLoaderFile" type="xs:anyURI" use="optional" />
-        <xs:attribute name="verbose" type="xs:boolean" default="false" use="optional" />    
+        <xs:attribute name="backupGlobals" type="xs:boolean" default="true" />
+        <xs:attribute name="backupStaticAttributes" type="xs:boolean" default="false" />
+        <xs:attribute name="bootstrap" type="xs:anyURI" />
+        <xs:attribute name="cacheTokens" type="xs:boolean" />
+        <xs:attribute name="colors" type="xs:boolean" default="false" />
+        <xs:attribute name="convertErrorsToExceptions" type="xs:boolean" default="true" />
+        <xs:attribute name="convertNoticesToExceptions" type="xs:boolean" default="true" />
+        <xs:attribute name="convertWarningsToExceptions" type="xs:boolean" default="true" />
+        <xs:attribute name="forceCoversAnnotation" type="xs:boolean" default="false" />
+        <xs:attribute name="mapTestClassNameToCoveredClassName" type="xs:boolean" default="false" />
+        <xs:attribute name="printerClass" type="xs:string" default="PHPUnit_TextUI_ResultPrinter" />
+        <xs:attribute name="processIsolation" type="xs:boolean" default="false" />
+        <xs:attribute name="stopOnError" type="xs:boolean" default="false" />
+        <xs:attribute name="stopOnFailure" type="xs:boolean" default="false" />
+        <xs:attribute name="stopOnIncomplete" type="xs:boolean" default="false" />
+        <xs:attribute name="stopOnSkipped" type="xs:boolean" default="false" />
+        <xs:attribute name="strict" type="xs:boolean" default="false" />        
+        <xs:attribute name="syntaxCheck" type="xs:boolean" default="false" />
+        <xs:attribute name="testSuiteLoaderClass" type="xs:string" default="PHPUnit_Runner_StandardTestSuiteLoader" />
+        <xs:attribute name="testSuiteLoaderFile" type="xs:anyURI"  />
+        <xs:attribute name="verbose" type="xs:boolean" default="false" />    
     </xs:attributeGroup>       
 
     <xs:group name="configGroup">
