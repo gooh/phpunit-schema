@@ -3,7 +3,7 @@
 
     <xs:complexType name="loggersType">
         <xs:sequence>
-            <xs:element name="log" type="loggerType" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="log" type="loggerType" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
            

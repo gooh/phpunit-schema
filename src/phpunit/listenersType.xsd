@@ -3,20 +3,20 @@
 
     <xs:complexType name="listenersType">
         <xs:sequence>
-            <xs:element name="listener" type="objectType" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="listener" type="objectType" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>    
     
     <xs:complexType name="objectType">
         <xs:sequence>
-            <xs:element name="arguments" minOccurs="0" maxOccurs="1">
+            <xs:element name="arguments" minOccurs="0">
                 <xs:complexType>
                     <xs:group ref="argumentsGroup"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
         <xs:attribute name="class" type="xs:string" use="required"/>
-        <xs:attribute name="file" type="xs:anyURI" use="optional"/>
+        <xs:attribute name="file" type="xs:anyURI"/>
     </xs:complexType>
 
     <xs:complexType name="arrayType">
