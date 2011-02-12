@@ -1,22 +1,6 @@
 <?php
-class SchemaTest extends PHPUnit_Framework_TestCase
+class SchemaTest extends SchemaTestCase
 {
-    /**
-     * @var String
-     */
-    protected $_schemaPath;
-
-    /**
-     * @var DOMDocument
-     */
-    protected $_dom;
-
-    public function setup()
-    {
-        $this->_dom = new DOMDocument;
-        $this->_schemaPath = realpath(__DIR__ . '/../src/phpunit.xsd');
-    }
-
     /**
      * @return Array
      */
@@ -30,7 +14,7 @@ class SchemaTest extends PHPUnit_Framework_TestCase
      */
     public function testXmlFilesValidateAgainstSchema($xmlFile)
     {
-        $this->_dom->load($xmlFile);
-        $this->assertTrue($this->_dom->schemaValidate($this->_schemaPath));
+        $this->_utils->getDom()->load($xmlFile);
+        $this->assertTrue($this->_utils->validateDom());
     }
 }
