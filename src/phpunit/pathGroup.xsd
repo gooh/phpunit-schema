@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:group name="pathGroup">
+        <xs:sequence>
+            <xs:element name="directory" type="directoryFilterType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="file" type="fileFilterType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>        
+    </xs:group>
+    
+    <xs:complexType name="directoryFilterType">
+        <xs:simpleContent>
+            <xs:extension base="xs:anyURI">
+                <xs:attribute type="xs:string" name="suffix" default="Test.php" />
+                <xs:attributeGroup ref="phpVersionGroup"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="fileFilterType">
+        <xs:simpleContent>
+            <xs:extension base="xs:anyURI">
+                <xs:attributeGroup ref="phpVersionGroup"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:attributeGroup name="phpVersionGroup">    
+        <xs:attribute name="phpVersion" type="xs:string" default="5.3.0"/>
+        <xs:attribute name="phpVersionOperator" type="xs:string" default=">=" />
+    </xs:attributeGroup>        
+
+</xs:schema>

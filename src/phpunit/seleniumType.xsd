@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="seleniumType">
+        <xs:sequence>
+            <xs:element name="browser" type="browserType"/>
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:complexType name="browserType">
+        <xs:attribute name="name" type="xs:string"/>
+        <xs:attribute name="browser" type="xs:string"/>
+        <xs:attribute name="host" type="xs:anyURI"/>        
+        <xs:attribute name="port" type="xs:nonNegativeInteger"/>
+        <xs:attribute name="timeout" type="xs:nonNegativeInteger"/>
+    </xs:complexType>
+    
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="filtersType.xsd" />
+    <xs:include schemaLocation="groupsType.xsd" />
+    <xs:include schemaLocation="loggersType.xsd" />
+    <xs:include schemaLocation="listenersType.xsd" />
+    <xs:include schemaLocation="phpType.xsd" />
+    <xs:include schemaLocation="testSuitesType.xsd" />
+    <xs:include schemaLocation="seleniumType.xsd" />
+    <xs:include schemaLocation="pathGroup.xsd" />
+
+    <xs:complexType name="phpUnitType">
+        <xs:annotation>
+            <xs:documentation>The main type specifying the document structure</xs:documentation>
+        </xs:annotation>    
+        <xs:group ref="configGroup"/>
+        <xs:attributeGroup ref="configAttributeGroup"/>
+    </xs:complexType>
+        
+    <xs:attributeGroup name="configAttributeGroup">
+        <xs:attribute name="backupGlobals" type="xs:boolean" default="true" use="optional" />
+        <xs:attribute name="backupStaticAttributes" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="bootstrap" type="xs:anyURI" use="optional" />
+        <xs:attribute name="cacheTokens" type="xs:boolean" use="optional" />
+        <xs:attribute name="colors" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="convertErrorsToExceptions" type="xs:boolean" default="true" use="optional" />
+        <xs:attribute name="convertNoticesToExceptions" type="xs:boolean" default="true" use="optional" />
+        <xs:attribute name="convertWarningsToExceptions" type="xs:boolean" default="true" use="optional" />
+        <xs:attribute name="forceCoversAnnotation" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="mapTestClassNameToCoveredClassName" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="printerClass" type="xs:string" default="PHPUnit_TextUI_ResultPrinter" use="optional" />
+        <xs:attribute name="processIsolation" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="stopOnError" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="stopOnFailure" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="stopOnIncomplete" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="stopOnSkipped" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="strict" type="xs:boolean" default="false" use="optional" />        
+        <xs:attribute name="syntaxCheck" type="xs:boolean" default="false" use="optional" />
+        <xs:attribute name="testSuiteLoaderClass" type="xs:string" default="PHPUnit_Runner_StandardTestSuiteLoader" use="optional" />
+        <xs:attribute name="testSuiteLoaderFile" type="xs:anyURI" use="optional" />
+        <xs:attribute name="verbose" type="xs:boolean" default="false" use="optional" />    
+    </xs:attributeGroup>       
+
+    <xs:group name="configGroup">
+        <xs:all>
+            <xs:element name="testsuites" maxOccurs="1" minOccurs="0" type="testSuitesType"/>
+            <xs:element name="groups" type="groupsType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="filter" type="filtersType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="logging" type="loggersType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="listeners" type="listenersType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="php" type="phpType" maxOccurs="1" minOccurs="0"/>
+            <xs:element name="selenium" type="seleniumType" maxOccurs="1" minOccurs="0"/>            
+        </xs:all>
+    </xs:group> 
+
+</xs:schema>

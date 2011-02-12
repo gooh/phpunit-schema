@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="phpType">
+        <xs:sequence>
+            <xs:element name="includePath" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ini" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="const" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="var" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="env" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="post" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="get" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="cookie" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="server" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="files" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="request" type="namedValueType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="namedValueType">
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="value" use="required" type="xs:anySimpleType"/>
+    </xs:complexType>
+
+</xs:schema>

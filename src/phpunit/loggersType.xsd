@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="loggersType">
+        <xs:sequence>
+            <xs:element name="log" type="loggerType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+           
+    <xs:complexType name="loggerType">
+        <xs:attribute name="type">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="coverage-html"/>
+                    <xs:enumeration value="coverage-clover"/>
+                    <xs:enumeration value="json"/>
+                    <xs:enumeration value="plain"/>
+                    <xs:enumeration value="tap"/>
+                    <xs:enumeration value="junit"/>
+                    <xs:enumeration value="testdox-html"/>
+                    <xs:enumeration value="testdox-text"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="target" type="xs:anyURI"/>
+        <xs:attribute name="title" type="xs:string"/>
+        <xs:attribute name="charset" type="xs:string" default="UTF-8"/>
+        <xs:attribute name="yui" type="xs:boolean" default="true"/>
+        <xs:attribute name="highlight" type="xs:boolean" default="false"/>
+        <xs:attribute name="lowUpperBound" type="xs:nonNegativeInteger" default="35"/>
+        <xs:attribute name="highLowerBound" type="xs:nonNegativeInteger" default="70"/>
+        <xs:attribute name="logIncompleteSkipped" type="xs:boolean" default="false"/>
+    </xs:complexType>    
+</xs:schema>

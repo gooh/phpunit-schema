@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="pathGroup.xsd" />
+
+    <xs:complexType name="filtersType">
+        <xs:choice>
+	        <xs:sequence>
+	            <xs:element name="blacklist" type="filterType"/>
+	            <xs:element name="whitelist" type="filterType" minOccurs="0"/>
+	        </xs:sequence>
+            <xs:sequence>
+                <xs:element name="whitelist" type="filterType"/>
+            </xs:sequence>	        
+	    </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="filterType">
+        <xs:sequence>
+            <xs:group ref="pathGroup"/>        
+            <xs:element name="exclude" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:group ref="pathGroup"></xs:group>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="addUncoveredFilesFromWhitelist" default="true" type="xs:boolean"/>        
+    </xs:complexType>
+
+</xs:schema>

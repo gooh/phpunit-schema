@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="listenersType">
+        <xs:sequence>
+            <xs:element name="listener" type="objectType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:complexType name="objectType">
+        <xs:sequence>
+            <xs:element name="arguments" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:group ref="argumentsGroup"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="class" type="xs:string" use="required"/>
+        <xs:attribute name="file" type="xs:anyURI" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="arrayType">
+        <xs:sequence>
+            <xs:element name="element" type="argumentType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="argumentType">
+        <xs:group ref="argumentChoice"/>
+        <xs:attribute name="key" use="required"/>
+    </xs:complexType>
+
+    <xs:group name="argumentsGroup">
+        <xs:sequence>
+            <xs:element name="array" type="arrayType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="integer" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="double" type="xs:double" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="null" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="object" type="objectType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="file" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="directory" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>    
+    </xs:group>
+    
+    <xs:group name="argumentChoice">
+        <xs:choice>
+            <xs:element name="array" type="arrayType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="integer" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="double" type="xs:double" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="null" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="object" type="objectType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="file" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="directory" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+        </xs:choice>    
+    </xs:group>
+
+</xs:schema>
