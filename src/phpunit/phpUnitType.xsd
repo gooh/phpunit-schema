@@ -44,13 +44,13 @@
 
     <xs:group name="configGroup">
         <xs:all>
-            <xs:element name="testsuites" maxOccurs="1" minOccurs="0" type="testSuitesType"/>
-            <xs:element name="groups" type="groupsType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="filter" type="filtersType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="logging" type="loggersType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="listeners" type="listenersType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="php" type="phpType" maxOccurs="1" minOccurs="0"/>
-            <xs:element name="selenium" type="seleniumType" maxOccurs="1" minOccurs="0"/>            
+            <xs:element name="testsuites" minOccurs="0" type="testSuitesType"/>
+            <xs:element name="groups" type="groupsType" minOccurs="0"/>
+            <xs:element name="filter" type="filtersType" minOccurs="0"/>
+            <xs:element name="logging" type="loggersType" minOccurs="0"/>
+            <xs:element name="listeners" type="listenersType" minOccurs="0"/>
+            <xs:element name="php" type="phpType" minOccurs="0"/>
+            <xs:element name="selenium" type="seleniumType" minOccurs="0"/>            
         </xs:all>
     </xs:group> 
 
