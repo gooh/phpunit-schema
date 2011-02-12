@@ -6,3 +6,5 @@ set_include_path(
         get_include_path()
     )
 );
+include_once 'tests/TestCaseUtility.php';
+include_once 'tests/SchemaTestCase.php';
