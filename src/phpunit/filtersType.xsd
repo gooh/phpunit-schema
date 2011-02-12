@@ -7,10 +7,10 @@
         <xs:choice>
 	        <xs:sequence>
 	            <xs:element name="blacklist" type="filterType"/>
-	            <xs:element name="whitelist" type="filterType" minOccurs="0"/>
+	            <xs:element name="whitelist" type="whiteListType" minOccurs="0"/>
 	        </xs:sequence>
             <xs:sequence>
-                <xs:element name="whitelist" type="filterType"/>
+                <xs:element name="whitelist" type="whiteListType"/>
             </xs:sequence>	        
 	    </xs:choice>
     </xs:complexType>
@@ -23,8 +23,16 @@
                     <xs:group ref="pathGroup"></xs:group>
                 </xs:complexType>
             </xs:element>
-        </xs:sequence>
-        <xs:attribute name="addUncoveredFilesFromWhitelist" default="true" type="xs:boolean"/>        
+        </xs:sequence>        
     </xs:complexType>
+
+    <xs:complexType name="whiteListType">
+        <xs:complexContent>
+            <xs:extension base="filterType">
+                 <xs:attribute name="addUncoveredFilesFromWhitelist" default="true" type="xs:boolean"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
 
 </xs:schema>
