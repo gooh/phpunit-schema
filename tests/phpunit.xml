@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://github.com/gooh/phpunit-schema/raw/master/src/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="../src/phpunit.xsd"
     bootstrap="bootstrap.php">
 	<testsuites>
 	  <testsuite name="PHPUnit-Schema">
