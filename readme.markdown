@@ -38,6 +38,18 @@ following two lines are all that is required:
         xsi:noNamespaceSchemaLocation="location of xsd file"
         …
 
+## Getting a Single Schema file
+
+The Schema file is currently split into multiple smaller files. This eases 
+maintaining the Schema file during development. However, when working with 
+PHPUnit, it might be undesired to have the entire folder structure in your 
+project. For this reason, you can create a single phpunit.xsd with the PHP 
+script given in the tools folder:
+
+    $ php generate-schema.php
+    Created new validated Schema file at:
+     F:\Work\code\PHPUnit-Schema\tools\phpunit.xsd.1301999633 
+
 ## Additional Resources
 
 The documentation of configuration files can be found in the official PHPUnit 
