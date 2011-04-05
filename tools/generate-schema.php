@@ -1,9 +1,13 @@
 <?php
-/*
- * This script can be used to generate a single phpunit.xsd from
- * the separate XSD files in the source folder. The script will
- * create a new file phpunit.xsd.[timestamp] in the tools folder.
- */
+$opts = array(
+    'http' => array(
+        'user_agent' => 'https://github.com/gooh/phpunit-schema',
+        'timeout'    => 60
+    )
+);
+$context = stream_context_create($opts);
+libxml_set_streams_context($context);
+
 $dom = new DOMDocument;
 $dom->preserveWhiteSpace = FALSE;
 $dom->load('../src/phpunit.xsd');
@@ -23,7 +27,10 @@ if ($dom->schemaValidate('http://www.w3.org/2001/XMLSchema.xsd')) {
     $dom->formatOutput = TRUE;
     $filename = __DIR__ . '/phpunit.xsd.' . time();
     $dom->save($filename);
-    printf('Created new validated Schema file at %s%s', $filename, PHP_EOL);
+    printf(
+    	"Created new validated Schema file at:\n %s\n",
+        realpath($filename)
+    );
 } else {
     trigger_error('Created Schema does not validate', E_USER_ERROR);
 }
