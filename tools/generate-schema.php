@@ -23,9 +23,15 @@ foreach (glob('../src/phpunit/*.xsd') as $typeXMLFile) {
         }
     }
 }
+$remainingInclude = $dom->getElementsByTagNameNS(
+	'http://www.w3.org/2001/XMLSchema',
+	'include'
+);
+$remainingInclude->item(0)->parentNode->removeChild($remainingInclude->item(0));
+
 if ($dom->schemaValidate('http://www.w3.org/2001/XMLSchema.xsd')) {
     $dom->formatOutput = TRUE;
-    $filename = __DIR__ . '/phpunit.xsd.' . time();
+    $filename = dirname(__FILE__) . '/phpunit.xsd.' . time();
     $dom->save($filename);
     printf(
     	"Created new validated Schema file at:\n %s\n",
