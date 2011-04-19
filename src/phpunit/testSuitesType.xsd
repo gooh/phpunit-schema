@@ -3,6 +3,10 @@
 
     <xs:include schemaLocation="pathGroup.xsd" />
 
+    <xs:element name="testSuiteFacet" abstract="true" />
+    <xs:element name="testsuite" type="testSuiteType" substitutionGroup="testSuiteFacet" />
+    <xs:element name="testsuites" type="testSuitesType" substitutionGroup="testSuiteFacet" />
+
     <xs:complexType name="testSuitesType">
         <xs:sequence>
             <xs:element name="testsuite" type="testSuiteType"/>

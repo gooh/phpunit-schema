@@ -13,7 +13,7 @@
     <xs:complexType name="phpUnitType">
         <xs:annotation>
             <xs:documentation>The main type specifying the document structure</xs:documentation>
-        </xs:annotation>    
+        </xs:annotation>
         <xs:group ref="configGroup"/>
         <xs:attributeGroup ref="configAttributeGroup"/>
     </xs:complexType>
@@ -44,7 +44,7 @@
 
     <xs:group name="configGroup">
         <xs:all>
-            <xs:element name="testsuites" minOccurs="0" type="testSuitesType"/>
+            <xs:element ref="testSuiteFacet" minOccurs="0"/>                    
             <xs:element name="groups" type="groupsType" minOccurs="0"/>
             <xs:element name="filter" type="filtersType" minOccurs="0"/>
             <xs:element name="logging" type="loggersType" minOccurs="0"/>
@@ -53,5 +53,4 @@
             <xs:element name="selenium" type="seleniumType" minOccurs="0"/>            
         </xs:all>
     </xs:group> 
-
 </xs:schema>
