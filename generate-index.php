@@ -23,13 +23,17 @@ $dom->encoding = 'UTF-8';
 
 $ul = $dom->documentElement
     ->appendChild($dom->createElement('head'))
-    ->appendChild($dom->createElement('title', 'PHPUnit Schema Files'))
-    ->parentNode
-    ->parentNode
+        ->appendChild($dom->createElement('title', 'PHPUnit Schema Files'))
+            ->parentNode
+        ->appendChild($dom->createElement('base'))
+            ->setAttribute('href', 'http://gooh.github.com/phpunit-schema')
+                ->parentNode
+            ->parentNode
+        ->parentNode
     ->appendChild($dom->createElement('body'))
-    ->appendChild($dom->createElement('h1', 'Available PHPUnit Schema Files'))
-    ->parentNode
-    ->appendChild($dom->createElement('ul'));
+        ->appendChild($dom->createElement('h1', 'Available PHPUnit Schema Files'))
+            ->parentNode
+        ->appendChild($dom->createElement('ul'));
 
 foreach ($iterator as $file) {
     $file = str_replace(
