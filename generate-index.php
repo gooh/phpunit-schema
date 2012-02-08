@@ -25,10 +25,6 @@ $ul = $dom->documentElement
     ->appendChild($dom->createElement('head'))
         ->appendChild($dom->createElement('title', 'PHPUnit Schema Files'))
             ->parentNode
-        ->appendChild($dom->createElement('base'))
-            ->setAttribute('href', 'http://gooh.github.com/phpunit-schema')
-                ->parentNode
-            ->parentNode
         ->parentNode
     ->appendChild($dom->createElement('body'))
         ->appendChild($dom->createElement('h1', 'Available PHPUnit Schema Files'))
@@ -36,16 +32,16 @@ $ul = $dom->documentElement
         ->appendChild($dom->createElement('ul'));
 
 foreach ($iterator as $file) {
-    $file = str_replace(
-        array(__DIR__, '\\'),
-        array('', '/'),
-        $file
+    $file = ltrim(
+        str_replace(
+            array(__DIR__, '\\'),
+            array('', '/'),
+            $file
+        ), '/'
     );
-    $li = $ul->appendChild($dom->createElement('li'));
-    $a = $dom->createElement('a', $file);
-    $a->setAttribute('href', $file);
-    $li->appendChild($a);
-    unset($li, $a, $file);
+    $ul->appendChild($dom->createElement('li'))
+        ->appendChild($dom->createElement('a', $file))
+            ->setAttribute('href', $file);
 }
 $dom->formatOutput = true;
 $dom->save('index.html');
