@@ -50,6 +50,10 @@ script given in the tools folder:
     Created new validated Schema file at:
      F:\Work\code\PHPUnit-Schema\tools\phpunit.xsd.1301999633 
 
+If you do not want to checkout this project at all, you can also link against 
+the pre-generated Schema files at http://gooh.github.com/phpunit-schema or copy 
+them from the [gh-pages branch][3].
+
 ## Additional Resources
 
 The documentation of configuration files can be found in the official PHPUnit 
@@ -63,3 +67,4 @@ The class processing the configuration file is
 
 [1]: http://www.phpunit.de/manual/current/en/appendixes.configuration.html
 [2]: https://github.com/sebastianbergmann/phpunit/raw/master/PHPUnit/Util/Configuration.php
+[3]: https://github.com/gooh/phpunit-schema/tree/gh-pages
