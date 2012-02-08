@@ -17,6 +17,8 @@
     <testsuite name="My Test Suite">
         <directory>/path/to/Test.php</directory>
         <file>/path/to/MyTest.php</file>
+        <exclude>/path/to/files/exclude</exclude>
+        <exclude>/path/to/more/files/exclude</exclude>        
     </testsuite>
 
     <groups>

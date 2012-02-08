@@ -25,7 +25,7 @@
   </logging>
 
   <filter>
-    <whitelist addUncoveredFilesFromWhitelist="true">
+    <whitelist processUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">PHPUnit</directory>
       <exclude>
        <file>PHPUnit/Autoload.php</file>
